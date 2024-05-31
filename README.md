@@ -1,9 +1,9 @@
 ## In next version I'll implement the following
 
-- collapse all UI and functionality
-- expand all UI and functionality
-- new file UI and functionality
-- search UI and functionality
+- [ ] collapse all UI and functionality
+- [ ] expand all UI and functionality
+- [ ] new file UI and functionality
+- [ ] search UI and functionality
 
 # Getting Started with Create React App
 
