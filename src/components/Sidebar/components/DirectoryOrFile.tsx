@@ -1,48 +1,35 @@
 import React, { useState } from "react";
 import classes from "./directoryOrFile.module.css";
 import { renderDirectories } from "../Sidebar";
-import FolderIcon from "@mui/icons-material/Folder";
-import FolderOpenIcon from "@mui/icons-material/FolderOpen";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import DescriptionIcon from "@mui/icons-material/Description";
+import ToggleExpand from "./ToggleExpand";
+import Icon from "./Icon";
+
 type Props = { directory: Directory };
 
 const DirectoryOrFile = ({ directory }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const hasChildren = !!directory.children;
+  const isDirectory = directory.type === "file";
+
+  const handleExpand = () => setIsExpanded((prev) => !prev);
   return (
     <>
       <div
         className={`${classes.directoryOrFile} ${
           directory.type === "file" ? classes.file : classes.directory
         }`}
-        {...(hasChildren
-          ? { onClick: () => setIsExpanded((prev) => !prev) }
-          : {})}
+        {...(hasChildren ? { onClick: handleExpand } : {})}
       >
-        {hasChildren ? (
-          <button className={classes.toggleExpand}>
-            {isExpanded ? (
-              <ExpandMoreIcon fontSize="small" />
-            ) : (
-              <ChevronRightIcon fontSize="small" />
-            )}
-          </button>
-        ) : (
-          ""
-        )}
+        <ToggleExpand
+          hasChildren={hasChildren}
+          isDirectory={isDirectory}
+          isExpanded={isExpanded}
+        />
+
         <div className={classes.icon}>
-          {directory.type === "folder" ? (
-            isExpanded ? (
-              <FolderOpenIcon fontSize="small" />
-            ) : (
-              <FolderIcon fontSize="small" />
-            )
-          ) : (
-            <DescriptionIcon fontSize="small" />
-          )}
+          <Icon isDirectory={isDirectory} isExpanded={isExpanded} />
         </div>
+
         <div className={classes.title}>{directory.title}</div>
       </div>
       {hasChildren && isExpanded && (
