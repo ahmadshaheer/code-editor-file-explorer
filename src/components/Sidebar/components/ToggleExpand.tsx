@@ -4,15 +4,10 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 type ToggleExpandParams = {
   isDirectory: boolean;
-  hasChildren: boolean;
   isExpanded: boolean;
 };
-const ToggleExpand = ({
-  isDirectory,
-  hasChildren,
-  isExpanded,
-}: ToggleExpandParams) => {
-  if (!isDirectory || !hasChildren) {
+const ToggleExpand = ({ isDirectory, isExpanded }: ToggleExpandParams) => {
+  if (!isDirectory) {
     return null;
   }
 

@@ -9,22 +9,19 @@ type Props = { directory: Directory };
 const DirectoryOrFile = ({ directory }: Props) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const hasChildren = !!directory.children;
-  const isDirectory = directory.type === "file";
+  const isDirectory = directory.type === "folder";
 
   const handleExpand = () => setIsExpanded((prev) => !prev);
+
   return (
     <>
       <div
         className={`${classes.directoryOrFile} ${
-          directory.type === "file" ? classes.file : classes.directory
+          !isDirectory ? classes.file : classes.directory
         }`}
-        {...(hasChildren ? { onClick: handleExpand } : {})}
+        {...(isDirectory ? { onClick: handleExpand } : {})}
       >
-        <ToggleExpand
-          hasChildren={hasChildren}
-          isDirectory={isDirectory}
-          isExpanded={isExpanded}
-        />
+        <ToggleExpand isDirectory={isDirectory} isExpanded={isExpanded} />
 
         <div className={classes.icon}>
           <Icon isDirectory={isDirectory} isExpanded={isExpanded} />

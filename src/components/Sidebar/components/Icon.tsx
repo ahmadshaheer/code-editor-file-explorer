@@ -13,6 +13,7 @@ const Icon = ({ isDirectory, isExpanded }: IconProps) => {
     }
     return <FolderIcon fontSize="small" />;
   }
+
   return <DescriptionIcon fontSize="small" />;
 };
 
