@@ -1,5 +1,5 @@
 ## In next version I'll implement the following
-
+- [ ] make further improvements to directory structure
 - [ ] collapse all UI and functionality
 - [ ] expand all UI and functionality
 - [ ] new file UI and functionality
