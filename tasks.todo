@@ -1,0 +1,12 @@
+Nested Sidebar Nav: 
+    ☐ folders (collapsable, expandable)
+        ☐ sub folders (collapasable, expandable)
+        ☐ files
+    ☐ 
+
+
+✔ get all directories @done(24-05-31 15:29)
+✔ render directories recursively @done(24-05-31 15:59)
+☐ display details
+
+<Sidebar directoryList={}/>

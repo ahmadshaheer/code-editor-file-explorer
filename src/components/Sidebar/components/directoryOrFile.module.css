@@ -1,0 +1,27 @@
+.directoryOrFile {
+  display: flex;
+  gap: 8px;
+  padding: 4px;
+  border-radius: 8px;
+}
+.directoryOrFile:hover {
+  background: #292738;
+  cursor: pointer;
+}
+.file {
+  padding-left: 25px;
+}
+.directory {
+}
+.child {
+  padding-left: 20px;
+}
+
+.toggleExpand {
+  background: none;
+  border: none;
+  height: 8px;
+  width: 8px;
+  color: #fff;
+  margin-right: 10px;
+}
