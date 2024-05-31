@@ -1,3 +1,7 @@
+## UI Preview
+<img width="1643" alt="Screenshot 2024-05-31 at 17 28 17" src="https://github.com/ahmadshaheer/code-editor-file-explorer/assets/30066022/87cb3178-1149-4242-bf95-64cb489648f4">
+
+
 ## In next version I'll implement the following
 - [ ] make further improvements to directory structure
 - [ ] collapse all UI and functionality
